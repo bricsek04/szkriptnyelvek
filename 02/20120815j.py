@@ -1,8 +1,7 @@
 # Egész szám megfordítása
 
 def reverse_number(n):
-    reversed_string = str(n)[::-1]
-    return int(reversed_string)
+    return int(str(n)[::-1])
 
 def main():
     number = 1977
