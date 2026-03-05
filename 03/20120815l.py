@@ -6,7 +6,7 @@ def decode_message(szoveg):
     erdemeny = ""
     for char in szoveg:
         if char in abc:
-            erdemeny += offset[abc.index(char)] # index vs find -> index: ValueError, find: -1
+            erdemeny += offset[abc.index(char)] # index vs find -> index: ValueError, find: -1.
         else:
             erdemeny += char
     return erdemeny
