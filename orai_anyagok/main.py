@@ -101,11 +101,17 @@ def main():
     print(a)
 
     # Keressük meg a 9-es elemet a listában
-    a.index(9)
-    a.index(99) # ValueError, mert nincs ilyen elem
+    a.index(8)
+    try:
+        a.index(99) # ValueError, mert nincs ilyen elem
+    except ValueError:
+        print("Elem nem található")
     a.append(9)
     a.remove(9) # Az első 9 elemet eltávolítja a listából
-    a.remove(9) # ValueError, mert nincs több 9-es elem
+    try:
+        a.remove(99) # ValueError, mert nincs ilyen elem
+    except ValueError:
+        print("Elem nem található")
 
     print(sorted(a)) # Rendezett lista, de a eredeti lista nem változik
     # Sorted -> Beépített fgv., meg kell neki adni egy listát, a megadott listát nem módosítja,
@@ -115,6 +121,79 @@ def main():
     a.sort() # Rendezés, nem egy beépített fgv., hanem a lista metódusa, a lista maga lesz rendezve, nem egy új lista jön létre.
     # Nincs visszatérési értéke, None-t ad vissza.
     a.reverse() # Fordított sorrend
+
+#------------------------------------
+    # 4. Hét
+
+    li = [1, 2, 3, 4, 5]
+    print(max(li))
+    print(min(li))
+    print(sum(li))
+
+    import math
+    print(math.prod(li)) # Szorzat
+
+    words = ["aa", "bb", "cc", "dd", "ee"]
+    print(":".join(words)) # "aa:bb:cc:dd:ee" stringet ad vissza
+
+    s = "aa:bb:cc:dd:ee"
+    print(s.split(":")) # ["aa", "bb", "cc", "dd", "ee"] listát ad vissza
+
+    s = "   aa   bb   cc   dd   ee   "
+    print(s.split()) # ["aa", "bb", "cc", "dd", "ee"] listát ad vissza, a split() alapértelmezetten whitespace karakterekre bontja a stringet, és eltávolítja a leading és trailing whitespace karaktereket
+
+    range(10) # 0-tól 10-ig
+    range(1, 10) # 1-től 10-ig
+    range(5, 10, 2) # 5-től 10-ig, 2-es lépésközzel, azaz 5, 7, 9
+    # a range egy iterátor, nem egy lista, ezért nem lehet indexelni, de lehet listává alakítani: list(range(10))
+
+    print(list(range(98, 82, -1)))
+
+    print(sum(range(101)))
+
+    ord("a") # 97, a karakter ASCII kódja
+    chr(97) # "a", a karakter ASCII kódja alapján visszaadja a karaktert
+
+    bool(0) # False
+    bool(0.2) # True
+    bool("") # False
+    bool("asd") # True, mert nem üres string
+    bool([]) # False
+    bool([1, 2, 3]) # True, mert nem üres lista
+    bool(None) # False
+    bool(False) # False
+    bool(True) # True
+
+    li = []
+    if li: # A lista üres, akkor False, egyébként True
+        print("A lista nem üres")
+
+    if not li: # A lista üres, akkor True, egyébként False
+        print("A lista üres")
+
+    import this # A Zen of Python, a Python filozófiája, amit Tim Peters írt, és a Python fejlesztői követnek, hogy a kódjuk egyszerű, olvasható és karbantartható legyen.
+
+    # Tuple adatszerkezet, nem módosítható lista, zárójelek között, elemek vesszővel elválasztva
+    t = (1, 2, 3)
+    type(t) # <class 'tuple'>
+    len(t) # 3
+    t[0] # 1
+    t[0:2] # (1, 2)
+    t[-2:] # (2, 3)
+    
+    m = ("Total recall", 1990, 8.3)
+    print(m)
+    # A tuple kezelhető heterogén adatszerkezetként, azaz különböző típusú elemeket is tartalmazhat.
+
+    # Párhuzamos értékadás
+    x, y = 3,5
+    (x, y) = (3, 5) # Ez a forma is működik, a bal oldalon egy tuple van, a jobb oldalon egy tuple, és a két tuple elemei párhuzamosan értékadódnak.
+
+    a = 5
+    b = 10
+    a, b = b, a # A két változó értékét megcseréljük.
+
+    t = (1,) # Egy elemű tuple, a vessző kötelező, különben nem lesz tuple, hanem egy sima érték lesz zárójelek között.
 
     
 
