@@ -11,7 +11,7 @@ def distance(p1, p2):
 def main():
     p1 = (1, 2)
     p2 = (6, 5)
-    print('A ket pont kozti tavolsag:', distance(p1, p2))
+    print('A ket pont kozti tavolsag:', f'{distance(p1, p2):.2f}')
 
 #############################################################################
 
