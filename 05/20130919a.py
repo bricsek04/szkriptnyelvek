@@ -8,9 +8,15 @@
 import sys
 
 def abc():
+    """
+        visszaadja az abc stringet
+    """
     return('abcdefghijklmnopqrstuvwxyz')
 
 def main():
+    """
+        A főprogram
+    """
     if sys.argv[0] == 'z-a.py':
         print(abc()[::-1])
     else:
