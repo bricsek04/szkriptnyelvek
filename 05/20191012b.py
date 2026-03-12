@@ -23,6 +23,9 @@ def münchausen_numbers(numbers):
     return münchausen_numbers
 
 def main():
+    """
+        A főprogram
+    """
     print(münchausen_numbers(range(10001)))
 
 if __name__ == '__main__':
