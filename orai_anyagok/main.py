@@ -5,6 +5,8 @@ This text serves as a simple example to illustrate how the code works and to pro
 """.strip()
 # Stripping leading and trailing whitespace for cleaner output
 
+counter = 0
+
 def main():
     #String operations
     print("'" + TEXT + "'")
@@ -195,9 +197,81 @@ def main():
 
     t = (1,) # Egy elemű tuple, a vessző kötelező, különben nem lesz tuple, hanem egy sima érték lesz zárójelek között.
 
+    #------------------------------------
+
+    # 5. Hét
+
+    round(3.142454, 3)
+    round(3.5)
+    round(5.5)
+    round(4.5) # A round() függvény a legközelebbi páros számra kerekít, ha a szám pontosan fél, akkor a legközelebbi páros számra kerekít, különben a legközelebbi egész számra kerekít.
+
+    # List comprehension
+    # Segítségével el tudunk készíteni egy listát
+    nums = [1,2,3,4]
+    squares = [n * n for n in nums] # [(kifejezés) for ciklus (ha van feltétel: if feltétel)]
+    nums = [8,3,2,1,5,9,2]
+    small = [n for n in nums if n <=2]
+
+    # szam = int(input("Páros szám"))
+    # assert szam % 2 == 0, "Páros számot kell megadni"
+    # print("A megadott páros szám: ", szam)
+
+    num = 0 
+    if num < 0:
+        print("Negatív szám")
+    elif num == 0:
+        print("Nulla")
+    else:
+        print("Pozitív szám")
+
+    li = ['alfa', 'beta', 'gamma']
+
+    sorsz = 1
+    for e in li:
+        print(f'{sorsz}) {e}')
+        sorsz += 1
+
+    for e in enumerate(li):
+        print(e)
+
+    for i, e in enumerate(li):
+        print(f'{i+1}) {e}')
+    
+    for e in enumerate(li, 15): # megadja honnan indul a sorszámozás
+        pass
+
+    # brake, a ciklus megszakítása
+    # continue, a ciklus következő iterációjára ugrás
+
+    for i in range(10):
+        if i == 5:
+            break
+        #print(i)
+    
+    for i in range(10):
+        if i == 5:
+            continue
+        #print(i)
+
+    # pass, egy üres utasítás, amit akkor használunk, ha a szintaxis megkövetel egy utasítást, de nem akarunk semmit csinálni.
+
+    for i in range(10):
+        pass
+
+    # docsstring
+    print(duplaz.__doc__)
+
+    # globalis változó, az alprogramon kívül van megadva tipikusan a forráskód elején
+    global counter
+    counter = 10
     
 
-
+def duplaz(n):
+    """ 
+    Returns the double of the input number.
+    """
+    return n*2
 
 if __name__ == '__main__':
     main()
