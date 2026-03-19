@@ -265,7 +265,95 @@ def main():
     # globalis változó, az alprogramon kívül van megadva tipikusan a forráskód elején
     global counter
     counter = 10
+
+    #------------------------------------
+
+    # 6. Hét
+
+    # Opcionális paramétek
+    greet("Csabi")
+    greet("Csabi", greetings="Hola")
+    greet("Csabi", greetings="Bonjour")
+
+    hello("Laci", repeat=3, postfix="!") # ha nem adom meg, hogy pontosan melyik opcionális paramétert akarom használni akkor sobran fogja venni
+
+    # Halmazok
+    lista = ["alma", "banán", "ananász", "alma", "narancs", "banán"]
+    gyumolcs = set(lista) # a halmazban minden elem egyszer szerepel
+    print(gyumolcs)
+    print(len(gyumolcs))
+    vissza = list(gyumolcs)
+    if "kiwi" in gyumolcs:
+        print(True)
+
+    a = ["alma", "banan", "citrom"]
+    a = set(a)
+    b = set()
+    # Halmazműveletek
+    b.add("alma")
+    b.add("naracs")
+    a.union(b)
+    a.intersection(b)
+    a.difference(b)
+
+    # Dictionary
+    # Kulcs érték párok vannak benne, a kulcs egy immutable objektum
+    d = {}
+    li = [1, 5, 6]
+    d['a'] = "alfa"
+    d['b'] = "beta"
+    d['g'] = "gamma"
+    d['d'] = "delta"
+    print(d)
+    print(d['b'])
+
+    try:
+        print(d['z'])
+    except KeyError:
+        print("Nincs benne ilyen kulcs")
+
+    print(d.get('a'))
+    print(d.get('z'))
+    print(d.get('z', "NOT_FOUND"))
+
+    d = {}
+    d[5] = [1,8,6]
+    d[3] = [3,2,1]
+    d[9] = [2,8,5,6]
+    # Az elemek sorrendje a beszúrási sorrend lesz
+    # n = int(input("adjon meg egy egézs számot: "))
+    n = 0 # az input helyett van
+    for e in d.get(n, []): # Ha nem így használjuk, hanem mondjuk d[n] akkor dobhat hibát a program amennyiben nincs ilyen kulcs
+        print(e)
+
+    print('x' in d)
+    # Ha csak a kulcsokkal vagy az értékekkel szeretnénk dolgozni
+    print(d.keys())
+    print(d.values())
+
+    # Rendezett kiírás
+    for i in sorted(d):
+        print(f"{i} -> {d[i]}")
+
+
+    print(sorted(d.items()))
+
+    for i, a in sorted(d.items()):
+        print(f"{i}, {a}")
     
+    del d[3] # ha szeretnénk kötölni egy érétkpárt az a del-el meg tudjuk tenni
+    print(d)
+
+
+
+
+def greet(name, greetings="Hello"):
+    print(f"{greetings} {name}!")
+    
+def hello(name, repeat=1, postfix = '!'):
+    for i in range(repeat):
+        print(f"{name}{postfix}")
+
 
 def duplaz(n):
     """ 
