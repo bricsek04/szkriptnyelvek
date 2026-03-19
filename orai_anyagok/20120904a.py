@@ -1,0 +1,2 @@
+# duplikátumok eltávolítása egyetlen sorban
+print(sorted(set([5, 2, 3, 5, 1, 4, -200, 5, 1, 3, 2, 2, 5])))
