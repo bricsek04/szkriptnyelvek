@@ -1,3 +1,4 @@
+# 8 királynő
 
 def sakk(l):
     print("+-----------------+")
