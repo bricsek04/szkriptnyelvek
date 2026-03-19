@@ -19,9 +19,7 @@ def is_anagramma(szo1, szo2):
     return(dict_szo1 == dict_szo2)
 
 def is_anagramma_v2(szo1, szo2):
-    szo1 = sorted(list(normalize(szo1)))
-    szo2 = sorted(list(normalize(szo2)))
-    return szo1 == szo2
+    return sorted(list(normalize(szo2))) == sorted(list(normalize(szo1)))
 
 
 def main():
