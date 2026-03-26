@@ -344,6 +344,41 @@ def main():
     del d[3] # ha szeretnénk kötölni egy érétkpárt az a del-el meg tudjuk tenni
     print(d)
 
+    #------------------------------
+    # 7. hét
+
+    # Fájlkezelés
+    f = open("text.txt", 'r')
+    for line in f:
+        line = line.rstrip("\n")
+        print(line)
+    f.close()
+
+    f = open("text.txt", "w")
+    name = "Jani"
+    age = 40
+    print("Hello", file=f)
+    print(True, 3.14, file=f)
+    f.write("aa")
+    f.write("bb\n")
+    f.close()
+
+    with open("text.txt", "r") as f:
+        print(f.read())
+
+    with open("text.txt", "r") as f1, open("text2.txt", "w") as to:
+        for line in f1:
+            to.write(line)
+
+    f = open("text.txt", "r")
+    g = open("text2.txt", "w")
+    for line in f:
+        g.write(line)
+    f.close()
+    g.close()
+
+    import shutil
+    shutil.copy("text.txt", "text2.txt")
 
 
 
