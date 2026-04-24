@@ -25,6 +25,30 @@ class Verem:
     def meret(self):
         return len(self.verem)
 
+class Sor:
+    def __init__(self):
+        self.sor = []
+
+    def __str__(self):
+        return str(self.sor)
+
+    def ures(self):
+        if self.sor:
+            return False
+        else:
+            return True
+
+    def betesz(self, ertek):
+        self.sor.append(ertek)
+
+    def kivesz(self):
+        if self.sor:
+            return self.sor.pop(0)
+        else:
+            return None
+
+    def meret(self):
+        return len(self.sor)
 
 
 def main():
@@ -43,7 +67,26 @@ def main():
     v.kivesz()
     v.kivesz()       # most már üres
     x = v.kivesz()
-    print(x)   
+    print(x)
+
+    print("------------------------")
+
+    s = Sor()
+    print(s)
+    print(s.ures())
+    s.betesz(1)
+    s.betesz(4)
+    s.betesz(5)
+    print(s)
+    print(s.meret())
+    print(s.ures())
+    x = s.kivesz()
+    print(x)
+    print(s)
+    s.kivesz()
+    s.kivesz()
+    x = s.kivesz()
+    print(x)
 
 if __name__ == "__main__":
     main()
