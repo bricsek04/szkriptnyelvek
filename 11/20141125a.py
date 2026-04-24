@@ -50,6 +50,26 @@ class Sor:
     def meret(self):
         return len(self.sor)
 
+class Sor2:
+    def __init__(self):
+        self.verem_be = Verem()
+        self.verem_ki = Verem()
+
+    def append(self, ertek):
+        self.verem_be.betesz(ertek)
+
+    def popleft(self):
+        if self.verem_ki.ures():
+            while not self.verem_be.ures():
+                self.verem_ki.betesz(self.verem_be.kivesz())
+        return self.verem_ki.kivesz()
+
+    def is_empty(self):
+        return self.verem_be.ures() and self.verem_ki.ures()
+
+    def size(self):
+        return self.verem_be.meret() + self.verem_ki.meret()
+
 
 def main():
     v = Verem()      # üres verem létrehozása
@@ -70,7 +90,6 @@ def main():
     print(x)
 
     print("------------------------")
-
     s = Sor()
     print(s)
     print(s.ures())
@@ -87,6 +106,16 @@ def main():
     s.kivesz()
     x = s.kivesz()
     print(x)
+
+    print("------------------------")
+    s2 = Sor2()
+    print(s2.is_empty())
+    s2.append(10)
+    s2.append(20)
+    s2.append(30)
+    print(s2.size())
+    print(s2.popleft())
+    print(s2.size())
 
 if __name__ == "__main__":
     main()
