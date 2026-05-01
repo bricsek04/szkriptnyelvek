@@ -1,6 +1,6 @@
 #Prím palindrom
 
-def is_prime(n):
+def is_prime(n: int) -> bool:
     if n < 2:
         return False
     if n == 2:
@@ -12,11 +12,11 @@ def is_prime(n):
             return False
     return True
 
-def is_palindrome(n):
+def is_palindrome(n: int) -> bool:
     s = str(n)
     return s == s[::-1]
 
-def test(n):
+def test(n: int) -> int:
     while True:
         if is_palindrome(n) and is_prime(n):
             return n

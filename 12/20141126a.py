@@ -1,9 +1,9 @@
 # palindrom két számrendszerben is (PE #36)
 
-def is_palindrome(s):
+def is_palindrome(s: str) -> bool:
     return s == s[::-1]
 
-def palindrome2():
+def palindrome2() -> int:
     osszeg = 0
     for n in range(1, 1000000):
         decimalis = str(n)
@@ -13,7 +13,7 @@ def palindrome2():
                 osszeg += n
     return osszeg
 
-def main():
+def main() -> None:
     print(palindrome2())
 
 if __name__ == "__main__":

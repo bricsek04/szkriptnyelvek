@@ -1,6 +1,6 @@
 # nyomtatandó oldalak
 
-def nyomtatas(s):
+def nyomtatas(s: str) -> list:
     oldalak = s.split(',')
     nyomtatando = []
     for oldal in oldalak:
@@ -11,13 +11,9 @@ def nyomtatas(s):
             nyomtatando.append(int(oldal))
     return nyomtatando
 
-
-
-
-def main():
+def main() -> None:
     be = input("Kérem adja meg a nyomtatandó oldalakat pl.: 1-4,7,9,11-15 : ")
     print(nyomtatas(be))
-
 
 if __name__ == "__main__":
     main()
