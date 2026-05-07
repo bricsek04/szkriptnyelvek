@@ -1,0 +1,12 @@
+{
+    "name": "János Kiss",
+    "age": 35,
+    "city": "Budapest",
+    "hobbies": ["programming", "hiking", "cooking"],
+    "salary": 50000,
+    "daughter": {
+        "name": "Anna",
+        "age": 5,
+        "hobbies": ["drawing", "dancing"]
+    }
+}
